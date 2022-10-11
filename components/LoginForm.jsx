@@ -22,8 +22,8 @@ const LoginForm = () => {
     }
   };
   return (
-    <form className="form__content" method="post" onSubmit={handleLogin}>
-      <h5 className="form__content-heading">LogIn Form</h5>
+    <form className="form" method="post" onSubmit={handleLogin}>
+      <h5 className="form__heading">LogIn Form</h5>
       <div className="form__group">
         <label htmlFor="email" className="form__label">
           Email address

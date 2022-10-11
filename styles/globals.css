@@ -26,6 +26,10 @@ a {
 }
 .main {
   background-color: rgb(31 41 55);
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
 }
 .nav {
   background-color: #333;
@@ -75,6 +79,7 @@ a {
 .form__selector-wrapper {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
 }
 .form__selector-title {
@@ -86,23 +91,32 @@ a {
   color: rgb(37 99 235 / 1);
 }
 .form__wrapper {
-  height: 80vh;
   width: 100%;
-  display: grid;
-  place-items: center;
   padding: 1rem;
 }
-.form__content {
-  width: 28rem;
+.form {
+  width: 18rem;
   margin-left: auto;
   margin-right: auto;
 }
-.form__content-heading {
+@media (min-width: 801px) {
+  .form {
+    width: 28rem;
+  }
+}
+.form__heading {
   font-weight: 500;
   font-size: 1.25rem;
   line-height: 1.75rem;
   color: rgb(255 255 255);
   margin: 1.5rem 0 0;
+  text-align: center;
+}
+
+@media (min-width: 801px) {
+  .form__content-heading {
+    text-align: left;
+  }
 }
 .form__group {
   margin: 1.5rem 0 0;
@@ -134,8 +148,9 @@ a {
   margin: 0;
 }
 .form__button {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  display: table;
+  width: 100%;
+  margin: 1.5rem auto 1.5rem;
   background-color: rgb(37 99 235 / 1);
   color: rgb(255 255 255 / 1);
   font-weight: 500;
@@ -146,6 +161,14 @@ a {
   border-radius: 0.5rem;
   cursor: pointer;
   border: none;
+}
+
+@media (min-width: 801px) {
+  .form__button {
+    display: block;
+    width: max-content;
+    margin: 1.5rem 0 1.5rem;
+  }
 }
 .form__regester {
   font-size: 0.875rem;

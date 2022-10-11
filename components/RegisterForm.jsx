@@ -23,8 +23,8 @@ const RegisterForm = () => {
     }
   };
   return (
-    <form className="form__content" method="post" onSubmit={handleSignup}>
-      <h5 className="form__content-heading">Register Form</h5>
+    <form className="form" method="post" onSubmit={handleSignup}>
+      <h5 className="form__heading">Register Form</h5>
       <div className="form__group">
         <label htmlFor="name" className="form__label">
           Name
