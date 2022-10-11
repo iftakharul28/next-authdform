@@ -39,7 +39,7 @@ const Navbar = () => {
           </div>
         ) : toggle ? (
           <div className="nav__user">
-            <p className="nav__user-link">logIn</p>
+            <p className="nav__user-link">LogIn</p>
             <p className="nav__user-link">Register</p>
           </div>
         ) : (
