@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../Layouts';
+import { Layout } from '../layout';
 import { useAuth } from '../context/AuthContext';
 
 const dashboard = () => {

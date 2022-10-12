@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { LoginForm, RegisterForm } from '../components';
 import { useMultistepForm } from '../hook/useMultistepForm';
-import Layout from '../layouts';
+import { Layout } from '../layout';
 
 export default function Home() {
   const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next } =
