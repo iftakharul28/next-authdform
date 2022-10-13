@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useInput, useValue } from '../hook/useInput';
 import { useRouter } from 'next/router';
@@ -71,7 +71,7 @@ const RegisterForm = () => {
         />
       </div>
       <button type="submit" className="form__button">
-        Login
+        Register
       </button>
       <div className="form__regester">
         Alrady registered?

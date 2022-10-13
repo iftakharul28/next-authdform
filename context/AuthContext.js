@@ -3,6 +3,7 @@ import {
   onAuthStateChanged,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  sendPasswordResetEmail,
   signOut,
 } from 'firebase/auth';
 import { auth } from '../config/firebase';
@@ -33,20 +34,41 @@ export const AuthContextProvider = ({ children }) => {
   }, []);
 
   const signup = (email, password) => {
-    return createUserWithEmailAndPassword(auth, email, password);
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        console.log(userCredential.user);
+      })
+      .catch((error) => {
+        alert(error.code);
+        alert(error.message);
+      });
   };
 
   const login = (email, password) => {
-    return signInWithEmailAndPassword(auth, email, password);
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        console.log(userCredential.user);
+      })
+      .catch((error) => {
+        alert(error.code);
+        alert(error.message);
+      });
   };
-
+  const resetPassword = (email) => {
+    console.log(email);
+    return sendPasswordResetEmail(auth, email).then((a) => {
+      alert('Password reset email sent');
+    });
+  };
   const logout = async () => {
-    setUser(null);
     await signOut(auth);
+    setUser(null);
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, signup, logout }}>
+    <AuthContext.Provider
+      value={{ user, login, resetPassword, signup, logout }}
+    >
       {loading ? null : children}
     </AuthContext.Provider>
   );
